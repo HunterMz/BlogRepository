@@ -7,11 +7,11 @@ category:
 date: 2016-07-07 14:30:32
 ---
 
-
-
 * Plist只能存储系统自带的一些常规的类, 也就是有writeToFile方法的对象才可以使用plist保存数据，例如：NSString、NSDictionary、NSArray、NSData、 NSNumber等类型
 
 * 在存储之前要先找到沙盒路径
+
+<!--more-->
 
 ``` objectivec
 // NSUserDomainMask 在用户目录下查找
@@ -50,3 +50,5 @@ NSString *path = [doc stringByAppendingPathComponent:@"abc.plist"];
 NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
 NSLog(@"%@", dict);
 ```
+
+

@@ -20,6 +20,8 @@ IP数据包：帧头+IP数据包+帧尾 （帧头包括源和目标主机MAC初�
 TCP数据信息：TCP头部+实际数据 (TCP头包括源和目标主机端口号、顺序号、确认号、校验字等）
 ``` 
 
+<!--more-->
+
 ## TCP/IP结构对应OSI
 ![](https://o9xwn216o.qnssl.com/blog-img/1467887580647.png)
 
