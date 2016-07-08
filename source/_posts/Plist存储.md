@@ -13,7 +13,7 @@ date: 2016-07-07 14:30:32
 
 * 在存储之前要先找到沙盒路径
 
-```objective-c
+```Objective-C
 // NSUserDomainMask 在用户目录下查找
 // YES 代表用户目录的~
 // NSDocumentDirectory 查找Documents文件夹
@@ -27,7 +27,7 @@ NSLog(@"%@", path);
 
 * 写入文件
 
-```objective-c
+```Objective-C
 NSArray *arr = @[@"lnj", @"28"];
 [arr writeToFile:path atomically:YES];
    
@@ -41,7 +41,7 @@ NSDictionary *dict = @{@"name": @"lnj", @"age":@"28"};
 
 * 读取文件
 
-```objective-c
+```Objective-C
 NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
  
 NSString *path = [doc stringByAppendingPathComponent:@"abc.plist"];
