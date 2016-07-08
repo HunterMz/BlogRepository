@@ -31,7 +31,7 @@ http://host[":"port][abs_path]
 HTTP协议的请求主要组成：`请求行`、`请求头`、`请求体`(注：只有Post请求才有请求体)
 
 ### Get请求举例分析
-``` http
+``` HTTP
 请求行：
 GET / HTTP/1.1
 
