@@ -13,7 +13,7 @@ date: 2016-07-07 14:30:32
 
 ## URL
 统一资源定位符：唯一标识并定位信息资源。格式如下：
-```
+``` http
 http://host[":"port][abs_path]
 ```
 * http表示要通过HTTP协议来定位网络资源
@@ -31,9 +31,9 @@ http://host[":"port][abs_path]
 HTTP协议的请求主要组成：`请求行`、`请求头`、`请求体`(注：只有Post请求才有请求体)
 
 ### Get请求举例分析
-```
+``` http
 请求行：
-GET / HTTP/1.1 
+GET / HTTP/1.1
 
 请求头:
 Host: www.baidu.com  //客户端IP和端口
@@ -49,7 +49,7 @@ Accept-Language: zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4,ja;q=0.2
 
 ### Post请求举例分析
 ```
-请求行: 
+请求行:
 POST hysj.jsp HTTP/1.1
 
 请求头:
@@ -77,18 +77,15 @@ content-text：服务器发送信息的类型
 date：发送时间
 server：服务器类型
 ```
-3.消息体: 服务器返回给客户端的页面内容 
-        
+3.消息体: 服务器返回给客户端的页面内容
+
 ## 常见状态码
 ```
 200 OK      //客户端请求成功
 400 Bad Request  //客户端请求有语法错误，不能被服务器所理解
-401 Unauthorized //请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用 
+401 Unauthorized //请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用
 403 Forbidden  //服务器收到请求，但是拒绝提供服务
 404 Not Found  //请求资源不存在，eg：输入了错误的URL
 500 Internal Server Error //服务器发生不可预期的错误
 503 Server Unavailable  //服务器当前不能处理客户端的请求，一段时间后可能恢复正常
 ```
-
-
-
