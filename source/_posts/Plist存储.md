@@ -13,7 +13,7 @@ date: 2016-07-07 14:30:32
 
 * 在存储之前要先找到沙盒路径
 
-```Objective-C
+```objectivec
 // NSUserDomainMask 在用户目录下查找
 // YES 代表用户目录的~
 // NSDocumentDirectory 查找Documents文件夹
@@ -27,10 +27,10 @@ NSLog(@"%@", path);
 
 * 写入文件
 
-```Objective-C
+```objectivec
 NSArray *arr = @[@"lnj", @"28"];
 [arr writeToFile:path atomically:YES];
-   
+
 NSDictionary *dict = @{@"name": @"lnj", @"age":@"28"};
 
 // 调用writeToFile将数据写入文件
@@ -41,13 +41,12 @@ NSDictionary *dict = @{@"name": @"lnj", @"age":@"28"};
 
 * 读取文件
 
-```Objective-C
+```objectivec
 NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
- 
+
 NSString *path = [doc stringByAppendingPathComponent:@"abc.plist"];
 
 // 读取数据
 NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
 NSLog(@"%@", dict);
 ```
-
