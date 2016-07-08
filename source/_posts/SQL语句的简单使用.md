@@ -10,13 +10,13 @@ date: 2016-07-07 14:30:32
 
 * 创建表
 
-```
+```SQL
 create table 表名(字段名1 字段类型， 字段名2 字段类型， ...)
 ```
 
 * 字段类型
 
-```
+```SQL
 integer: 整形值
 real: 浮点值
 text: 文本字符串
@@ -25,7 +25,7 @@ blob: 二进制数据(比如文件)
 
 * 删表
 
-```
+```SQL
 drop table 表名 ;
 
 drop table if exists 表名 ;
@@ -33,7 +33,7 @@ drop table if exists 表名 ;
 
 * 插入数据 (insert)
 
-```
+```SQL
 insert into 表名 (字段1, 字段2, …) values (字段1的值, 字段2的值, …) ; 
 
 insert into test_table (name, age) values (‘mj’, 10) ; 
@@ -41,7 +41,7 @@ insert into test_table (name, age) values (‘mj’, 10) ;
 
 * 更新数据
 
-```
+```SQL
 update 表名 set 字段1 = 字段1的值, 字段2 = 字段2的值, … ; 
 
 update test_table set name = ‘jack’, age = 20 ; 
@@ -49,7 +49,7 @@ update test_table set name = ‘jack’, age = 20 ;
 
 * 删除数据
 
-```
+```SQL
 delete from 表名 ;
 
 delete from test_table ;  // 会删除test_table中的所有数据
@@ -58,7 +58,7 @@ delete from test_table ;  // 会删除test_table中的所有数据
 * 条件语句
 
 
-```
+```SQL
 条件语句的常见格式:
 
 where 字段 = 某个值 ;   // 不能用两个 =
@@ -83,7 +83,7 @@ delete from t_student where age <= 10 or age > 30 ;
 
 * DQL语句
 
-```
+```SQL
 格式
 
 select 字段1, 字段2, … from 表名 ;
@@ -102,7 +102,7 @@ select * from test_table where age > 10 ;  //  条件查询
 
 * 起别名
 
-```
+```SQL
 格式(字段和表都可以起别名)
 
 select 字段1 别名 , 字段2 别名 , … from 表名 别名 ; 
@@ -121,7 +121,7 @@ select s.name, s.age from test_table s ;  //给test_table表起个别名叫做s�
 
 * 查询表中某一记录的数量
 
-```
+```SQL
 格式
 
 select count (字段) from 表名 ;
@@ -138,7 +138,7 @@ select count ( * ) from test_table where score >= 60;
 
 * 排序
 
-```
+```SQL
 查询出来的结果可以用order by进行排序
 
 select * from t_student order by 字段 ;
@@ -162,7 +162,7 @@ select * from t_student order by age asc, height desc ;
 
 * 使用limit
 
-```
+```SQL
 使用limit可以精确地控制查询结果的数量，比如每次只查询10条数据
 
 格式
