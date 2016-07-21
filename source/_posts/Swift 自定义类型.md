@@ -1,5 +1,5 @@
 ---
-title: Swift ———— 自定义类型
+title: Swift————自定义类型
 tags:
   - Swift
 category:
@@ -7,8 +7,6 @@ category:
 date: 2016-07-21 14:29:33
 ---
 
-
-# Swift 自定义类型
 
 ## Hashable 协议
 * 什么是Hashable(哈希值)？     
