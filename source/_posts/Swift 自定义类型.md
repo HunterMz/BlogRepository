@@ -1,5 +1,5 @@
 ---
-title: Swift————自定义类型
+title: Swift——自定义类型
 tags:
   - Swift
 category:
@@ -17,8 +17,8 @@ date: 2016-07-21 14:29:33
 
 * Swift 中的Hashable协议
 	关于`Hashable` 协议，苹果官方文档中给出如下概述：
-	>
-	A hash value, provided by a type’s hashValue property, is an integer that is the same for any two instances that compare equally. That is, for two instances a and b of the same type, if a == b then a.hashValue == b.hashValue. The reverse is not true: Two instances with equal hash values are not necessarily equal to each other.
+	
+	> A hash value, provided by a type’s hashValue property, is an integer that is the same for any two instances that compare equally. That is, for two instances a and b of the same type, if a == b then a.hashValue == b.hashValue. The reverse is not true: Two instances with equal hash values are not necessarily equal to each other.
 	由此可见通常可以通过比较两个类型的 `hash value` 来比较两个类型是否相等。
 	
 * Hashable 的应用
