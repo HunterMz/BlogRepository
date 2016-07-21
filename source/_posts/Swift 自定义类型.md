@@ -1,3 +1,13 @@
+---
+title: Swift ———— 自定义类型
+tags:
+  - Swift
+category:
+  - iOS开发
+date: 2016-07-21 14:29:33
+---
+
+
 # Swift 自定义类型
 
 ## Hashable 协议
