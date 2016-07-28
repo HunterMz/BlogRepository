@@ -27,7 +27,7 @@ class Child {
     var pet: Pet?
 }
 ```
-
+<!--more-->
 现在如果我们想访问 Toy 的 name 属性，一般来说会写这样的代码：
 
 ```swift
@@ -48,7 +48,7 @@ if let toyName = xiaoming.pet?.toy?.name {
 ```swift
 extension Toy {
     func play() {
-        print("我是玩具，快来玩我呀")
+    	print("我是玩具，快来玩我呀")
     }
 }
 ```
@@ -139,7 +139,7 @@ infix operator +* {
 ```swift
 // 错误代码
 func incrementor(variable: Int) -> Int {
-    return ++variable
+	return ++variable
 }
 ```
 > 因为在 swift 中所有有可能变化的地方，都默认认为不可变，也就是用 let 类声明。
@@ -163,7 +163,7 @@ print(a)
 // 定义
 func makeIncrementor(addNumber: Int) -> ((inout Int) -> Void) {
 	func incrementor (inout variable: Int) {
-		 variable += addNumber
+		variable += addNumber
 	}
    return incrementor
 }
