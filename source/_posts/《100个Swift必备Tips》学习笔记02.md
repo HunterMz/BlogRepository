@@ -40,12 +40,12 @@ xiaoming.pet?.toy?.name
 
 ```swift
 if let toyName = xiaoming.pet?.toy?.name {
-	 print(toyName)
+	print(toyName)
 }
 ```
 这样的操作是没有问题的，但是如果需求稍微变一下，就有点麻烦了，看下面
 
-```
+```swift
 extension Toy {
     func play() {
         print("我是玩具，快来玩我呀")
@@ -54,7 +54,7 @@ extension Toy {
 ```
 如果有玩具的话就玩
 
-```
+```swift
 xiaoming.pet?.toy?.play()
 ```
 问题来了，如果除了小明，小红、小李、小王、老王等都想玩这个玩具，代码会变成下面的风格
