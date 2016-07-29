@@ -40,7 +40,7 @@ xiaoming.pet?.toy?.name
 
 ```swift
 if let toyName = xiaoming.pet?.toy?.name {
-	print(toyName)
+    print(toyName)
 }
 ```
 这样的操作是没有问题的，但是如果需求稍微变一下，就有点麻烦了，看下面
@@ -78,9 +78,9 @@ let playClosure = {(child: Child) -> Void? in
 // 调用
 // 使用 Optional Binding 来判断调用是否成功
 if let result: Void = playClosure(xiaoming) {
-	print("玩的好开心")
+    print("玩的好开心")
 } else {
-	print("没有玩具可以玩")
+    print("没有玩具可以玩")
 }
 ```
 
@@ -125,12 +125,12 @@ swift 中也允许我们定义一个全新的操作符，但是需要注意几�
 
 ``` swift
 func +* (left: Vector2D, right: Vector2D) -> Double {
-    return left.x * right.x + left.y * right.y
+	return left.x * right.x + left.y * right.y
 }
 
 infix operator +* {
-    associativity none
-    precedence 160
+	associativity none
+	precedence 160
 }
 ```
 ## func 的参数修饰
@@ -139,7 +139,7 @@ infix operator +* {
 ```swift
 // 错误代码
 func incrementor(variable: Int) -> Int {
-	return ++variable
+    return ++variable
 }
 ```
 > 因为在 swift 中所有有可能变化的地方，都默认认为不可变，也就是用 let 类声明。
@@ -149,7 +149,7 @@ func incrementor(variable: Int) -> Int {
 ```swift
 // 定义
 func incrementor (inout varivable: Int) {
-	++varivable
+    ++varivable
 }
 
 // 调用
@@ -162,10 +162,10 @@ print(a)
 ```swift
 // 定义
 func makeIncrementor(addNumber: Int) -> ((inout Int) -> Void) {
-	func incrementor (inout variable: Int) {
-		variable += addNumber
-	}
-   return incrementor
+    func incrementor (inout variable: Int) {
+	      variable += addNumber
+    }
+    return incrementor
 }
 
 // 调用
