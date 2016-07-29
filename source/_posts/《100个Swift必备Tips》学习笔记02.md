@@ -72,7 +72,7 @@ laowang.pet?.toy?.play()
 
 // 定义一个闭包
 let playClosure = {(child: Child) -> Void? in
-	child.pet?.toy?.play()
+    child.pet?.toy?.play()
 }
 
 // 调用
@@ -125,12 +125,12 @@ swift 中也允许我们定义一个全新的操作符，但是需要注意几�
 
 ``` swift
 func +* (left: Vector2D, right: Vector2D) -> Double {
-	return left.x * right.x + left.y * right.y
+    return left.x * right.x + left.y * right.y
 }
 
 infix operator +* {
-	associativity none
-	precedence 160
+    associativity none
+    precedence 160
 }
 ```
 ## func 的参数修饰
