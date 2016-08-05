@@ -79,3 +79,12 @@ func sum4(input: Int...) -> Int {
 }
 ```
 
+## Designated，Convenience 和 Required
+
+* Swift 的初始化方法超级严格。强化了 `designated` 初始化方法的地位。Swift 中不加修饰的 init 方法都需要在方法中保证所有非 Optional 的实例变量被赋值初始化，而	在子类中也强制调用 super 版本的 `designated` 初始化，保证被初始化的对象总是可以被完整的初始化。
+
+* `convenience` 初始化方法必须调用同一个类中的 `designated` 初始化完成设置。并且， convenience 的初始化方法是不能被子类重写或者是从子类中以 super 的方式被调用的。
+
+* 对于默写我们希望子类中一定实现的 `designated` 初始化方法，我们可以通过添加 `required` 关键字进行限制，限制子类必须对这个方法重写实现。
+
+
