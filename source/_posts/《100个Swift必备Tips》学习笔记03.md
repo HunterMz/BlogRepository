@@ -19,7 +19,7 @@ OC 没用命名空间，所有的代码和引用的静态库最终都会被编�
 
 **方式二**：使用类型嵌套的方法来指定访问的范围。常见做法是将名字重复的类型定义到不同的 struct 中，以此避免冲突。这样在不适用多个 module 的情况下也能取得隔离同名类型的效果。
 
-注：个人觉得第一种实现方式有些麻烦，第二种方法还好，但在一般开发中尽量不要定义名字相同的同类型变量。
+注：在一般开发中尽量不要定义名字相同的同类型变量。
 
 <!--more-->
 
@@ -86,5 +86,25 @@ func sum4(input: Int...) -> Int {
 * `convenience` 初始化方法必须调用同一个类中的 `designated` 初始化完成设置。并且， convenience 的初始化方法是不能被子类重写或者是从子类中以 super 的方式被调用的。
 
 * 对于默写我们希望子类中一定实现的 `designated` 初始化方法，我们可以通过添加 `required` 关键字进行限制，限制子类必须对这个方法重写实现。
+
+## default 参数
+Swift 的方法支持默认参数，即在声明方法时，可以给某个参数一个默认使用的值。在调用的时候如果传入了这个参数，则使用传入的值，如果缺少这个输入参数，那么直接使用设定的默认值进行调用。
+
+```swift
+func sayHello1(str1: String = "Hello", str2: String, str3: String) {
+    print(str1 + str2 + str3)
+}
+
+func sayHello2(str1: String, str2: String, str3: String = "World") {
+    print(str1 + str2 + str3)
+}
+```
+
+调用
+
+```swift
+sayHello1(str2: " ", str3: "World")
+sayHello2( str1: "Hello", str2: " ")”
+```
 
 
