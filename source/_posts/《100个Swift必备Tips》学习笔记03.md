@@ -107,4 +107,53 @@ sayHello1(str2: " ", str3: "World")
 sayHello2( str1: "Hello", str2: " ")”
 ```
 
+## 正则表达式
+Swift 目前没有在语言层面支持 `正则表达式`，所以我们想要自定义 "=~" 运算符来简化操作。
+
+* 首先做一个封装
+
+
+```swift
+struct RegexHelper {
+    let regex: NSRegularExpression
+    
+    init(pattern: String) throws {
+        
+        try regex = NSRegularExpression(pattern: pattern, options: .CaseInsensitive)
+        
+    }
+    
+    func match(input: String) -> Bool {
+        let matches = regex.matchesInString(input, options: [], range: NSMakeRange(0, input.characters.count))
+        
+        return matches.count > 0
+    }
+}
+```
+
+* 然后再自定义操作符
+
+```swift
+infix operator =~ {
+    associativity none
+    precedence 130
+}
+
+func =~(lhs: String, rhs: String) -> Bool {
+    do {
+        return try RegexHelper(rhs).match(lhs)
+    } catch _ {
+        return false
+    }
+}
+```
+
+* 使用
+
+```swift
+if "onev@onevcat.com" =~ "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$" {
+    print("有效的邮箱地址")
+}
+```
+
 
