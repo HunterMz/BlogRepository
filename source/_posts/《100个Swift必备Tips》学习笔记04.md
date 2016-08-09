@@ -18,28 +18,28 @@ final 关键字可以用在 class， func 或者 var 前面进行修饰，表示
    * 为了父类中某些代码一定会被执行：当父类中一些关键代码在被继承重写好偶必须执行（比如一些状态配置，认证等），可以使用一个 final 的方法来确保这些代码一定被执行。
 
 ```swift
-   class Parent {
-       final func method() {
-           print("开始配置")
-           // ..必要的代码
+class Parent {
+    final func method() {
+        print("开始配置")
+        // ..必要的代码
 
-           methodImpl()
+        methodImpl()
 
-           // ..必要的代码
-           print("结束配置")
-       }
-       func methodImpl() {
-           fatalError("子类必须实现这个方法")
-           // 或者也可以给出默认实现
-       }
+        // ..必要的代码
+        print("结束配置")
+    }
 
-   }
+    func methodImpl() {
+        fatalError("子类必须实现这个方法")
+        // 或者也可以给出默认实现
+    }
+}
 
-   class Child: Parent {
-       override func methodImpl() {
-       //..子类的业务逻辑
-       }
-   }
+class Child: Parent {
+    override func methodImpl() {
+    //..子类的业务逻辑
+    }
+}
 ``` 
 
 <!--more-->
@@ -56,19 +56,19 @@ lazy var str: String = "Hello"
 	可以使用 lazy 对 map 或是 filter 这类接收闭包并进行运行的方法一起，让整个行为变成延时进行的。先看下直接使用 map：
 	
 ```swift
-	let data = 1...3
-	let result = data.map {
-	(i: Int) -> Int in
-       print("正在处理 \(i)")
-       return i * 2
-	}
+let data = 1...3
+let result = data.map {
+    (i: Int) -> Int in
+        print("正在处理 \(i)")
+        return i * 2
+}
 	
-   print("准备访问结果")
-   for i in result {
-       print("操作后结果为 \(i)")
-   }
+print("准备访问结果")
+for i in result {
+    print("操作后结果为 \(i)")
+}
    
-   print("操作完毕")
+print("操作完毕")
 ```
 	
 输出为：
@@ -87,32 +87,32 @@ lazy var str: String = "Hello"
 现在使用 lazy 进行修饰
 	
 ```swift
-	let data = 1...3
-	let result = data.lazy.map {
-	(i: Int) -> Int in
-       print("正在处理 \(i)")
-       return i * 2
-	}
+let data = 1...3
+let result = data.lazy.map {
+    (i: Int) -> Int in
+    print("正在处理 \(i)")
+    return i * 2
+}
 	
-   print("准备访问结果")
-   for i in result {
-       print("操作后结果为 \(i)")
-   }
+print("准备访问结果")
+for i in result {
+    print("操作后结果为 \(i)")
+}
    
-   print("操作完毕")
+print("操作完毕")
 ```
 	
 运行结果
 	
 ```swift
-	// 准备访问结果
-	// 正在处理 1
-	// 操作后结果为 2
-	// 正在处理 2
-	// 操作后结果为 4
-	// 正在处理 3
-	// 操作后结果为 6
-	// 操作完毕
+// 准备访问结果
+// 正在处理 1
+// 操作后结果为 2
+// 正在处理 2
+// 操作后结果为 4
+// 正在处理 3
+// 操作后结果为 6
+// 操作完毕
 ```
 ## 隐士解包 Optional
 
