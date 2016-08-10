@@ -8,19 +8,27 @@ category:
 date: 2016-07-27 17:56:33
 ---
 
-前言：趁着最近项目不是很忙，学习下喵神的《100个Swift必备Tips》，边学边做些笔记方便日后查阅，也希望能给其他和我一样学习 Swift 的开发者提供一点点帮助。
+前言：趁着最近项目不是很忙，学习下喵神的《100个Swift必备Tips》，边学边做些笔记（或者叫摘录）方便日后查阅。
+
+# 内容概述
+本章内容包括：
+	* Struct Mutable 的方法
+	* Sequence 序列化
+	* 多元组的使用
+	* @autoclosure 和 ??
+	
+<!--more-->
 
 ## Struct Mutable 的方法
 如果想在 `struct` 内部通过函数修改变量的值，需要在函数前面加 `mutating`
 
-## 将 protocol 的方法声明为 mutating
 因为 `struct` 是 `Immutable` 的，所以为了使 `struct` 实现协议的方法，并在方法内修改 struct 的变量，需要将协议方法声明为 mutating
 
 ## Sequence 序列化
 一个类如果实现了 `SequenceType` 协议，那么他就可以使用 `for … in` 语法进行遍历了，包括我们自己的定义的类。
 
 那么如果还实现 `SequenceType` 协议呢？
-<!--more-->
+
 一步一步来，首先自定义一个实体类 Book ：     
 
 ``` swift

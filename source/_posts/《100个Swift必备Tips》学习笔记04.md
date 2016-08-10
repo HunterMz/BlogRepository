@@ -8,10 +8,19 @@ category:
 date: 2016-08-08 17:38:17
 ---
 
-## final
-final 关键字可以用在 class， func 或者 var 前面进行修饰，表示不允许对该内容进行继承或者重写操作。
+# 内容概述
+
+本篇主要包括：
+	* final 关键字的使用
+	* lazy 修饰符和 lazy 方法 
+	* 隐士解包 Optional
+	* Protocol Extension
+	* Where 的使用
 
 <!--more-->
+
+## final
+final 关键字可以用在 class， func 或者 var 前面进行修饰，表示不允许对该内容进行继承或者重写操作。
 
 * 使用场景
    * 类或者方法的功能确实已经完备了：比如一些工具类和方法，已经过完备验证，使用者只需要调用。
@@ -129,6 +138,74 @@ var maybeObeject: MyClass? = MyClass()
 maybeObeject.fool() 
 ```
 
+##  Protocol Extension
+在 Swift 2中，我们可以对一个已有的 protocol 进行扩展，扩展中实现的方法将作为实现扩展的类型的默认实现。如下：
+
+```swift
+protocol Mypotocol {
+    func method()
+}
+
+extension Mypotocol {
+    func method() {
+        print("Called")
+    }
+}
+```
+
+在实现这个借口的类型中，即使什么也不写，也可以编译通过。
+
+```swift
+struct MyStuct: Mypotocol {
+    
+}
+```
+
+## Where 的使用
+* 在 switch 语句中使用
+
+```swift
+let name = ["王小二","张三","李四","王二小"]
+
+name.forEach {
+    switch $0 {
+    case let x where x.hasPrefix("王"):
+        print("\(x)是笔者本家")
+    default:
+        print("你好，\($0)")
+    }
+}
+
+// 输出：
+// 王小二是笔者本家
+// 你好，张三
+// 你好，李四
+// 王二小是笔者本家”
+```
+
+* if let 或者 for 中使用
+
+```swift
+let num: [Int?] = [48, 99, nil]
+num.forEach {
+    if let score = $0 where score > 60 {
+        print("及格啦 - \(score)")
+    } else {
+        print(":(")
+    }
+}
+
+// 输出：
+// :(
+// 及格啦 - 99
+// :(
 
 
+for score in num where score > 60 {
+    print("及格啦 - \(score)")
+}
+
+// 输出：
+// 及格啦 - Optional(99)”
+```
 

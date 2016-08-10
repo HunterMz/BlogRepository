@@ -7,6 +7,16 @@ category:
   - iOS开发
 date: 2016-07-28 10:44:49
 ---
+# 内容概述
+
+本篇主要内容包括：
+	* Optional Chaining(可选链)
+	* 操作符
+	* func 的参数修饰
+	* 下标的使用
+
+<!--more-->
+
 ## Optional Chaining(可选链)
 先上一段代码吧
 
@@ -27,7 +37,7 @@ class Child {
     var pet: Pet?
 }
 ```
-<!--more-->
+
 现在如果我们想访问 Toy 的 name 属性，一般来说会写这样的代码：
 
 ```swift
