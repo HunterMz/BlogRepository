@@ -9,13 +9,12 @@ date: 2016-08-08 17:38:17
 ---
 
 # 内容概述
-
-本篇主要包括：
-	* final 关键字的使用
-	* lazy 修饰符和 lazy 方法 
-	* 隐士解包 Optional
-	* Protocol Extension
-	* Where 的使用
+本篇主要包括   
+* final 关键字的使用
+* lazy 修饰符和 lazy 方法 
+* 隐士解包 Optional
+* Protocol Extension
+* Where 的使用
 
 <!--more-->
 
