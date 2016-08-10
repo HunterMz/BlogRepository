@@ -8,12 +8,10 @@ category:
 date: 2016-07-28 10:44:49
 ---
 # 内容概述
-
-本篇主要内容包括：
-	* Optional Chaining(可选链)
-	* 操作符
-	* func 的参数修饰
-	* 下标的使用
+* Optional Chaining(可选链)
+* 操作符
+* func 的参数修饰
+* 下标的使用
 
 <!--more-->
 

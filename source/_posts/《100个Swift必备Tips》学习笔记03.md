@@ -9,15 +9,13 @@ date: 2016-07-29 09:15:37
 ---
 
 # 内容概述
-
-本篇主要包括：
-	* 方法嵌套
-	* 命名空间
-	* typealias 
-	* 可变参数函数
-	*  Designated，Convenience 和 Required
-	*  default 参数
-	*  正则表达式
+* 方法嵌套
+* 命名空间
+* typealias 
+* 可变参数函数
+*  Designated，Convenience 和 Required
+*  default 参数
+*  正则表达式
 
 <!--more-->
 

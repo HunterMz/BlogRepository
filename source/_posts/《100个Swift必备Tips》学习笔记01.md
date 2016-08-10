@@ -11,12 +11,11 @@ date: 2016-07-27 17:56:33
 前言：趁着最近项目不是很忙，学习下喵神的《100个Swift必备Tips》，边学边做些笔记（或者叫摘录）方便日后查阅。
 
 # 内容概述
-本章内容包括：
-	* Struct Mutable 的方法
-	* Sequence 序列化
-	* 多元组的使用
-	* @autoclosure 和 ??
-	
+* Struct Mutable 的方法
+* Sequence 序列化
+* 多元组的使用
+* @autoclosure 和 ??
+
 <!--more-->
 
 ## Struct Mutable 的方法
