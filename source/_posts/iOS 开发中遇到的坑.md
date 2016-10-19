@@ -109,4 +109,6 @@ UIInterfaceOrientationLandscapeLeft      = UIDeviceOrientationLandscapeRight,
 UIInterfaceOrientationLandscapeRight     = UIDeviceOrientationLandscapeLeft
 ```
 
+https://o9xwn216o.qnssl.com/blog-img/1476453944034.png
+
 
