@@ -109,6 +109,14 @@ UIInterfaceOrientationLandscapeLeft      = UIDeviceOrientationLandscapeRight,
 UIInterfaceOrientationLandscapeRight     = UIDeviceOrientationLandscapeLeft
 ```
 
-https://o9xwn216o.qnssl.com/blog-img/1476453944034.png
-
+## 判断当前控制器是 push 进来的还是 present 进来
+```objectivec
+if (self.navigationController.viewControllers.count > 1) {
+	// push 
+	[self.navigationController popViewControllerAnimated:YES];
+}else {
+	// present
+	[self dismissViewControllerAnimated:[NSUserDefaults standardUserDefaults].userAnimated completion:nil];
+}
+```
 
