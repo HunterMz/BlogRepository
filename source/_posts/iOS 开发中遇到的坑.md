@@ -7,10 +7,8 @@ category:
 date: 2016-09-20 14:39:33
 ---
 
-# 记录 iOS 开发中遇到的坑，持续更新......
-## iOS 10 相关
-
-### 权限描述 crash 
+# 记录 iOS 开发中遇到的坑，持续更新.....
+## iOS10 权限描述 crash 
 **问题描述：**当使用 iOS10 运行项目会 crash，报错信息如下：
 
 <font color=red>**This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSContactsUsageDescription key with a string value explaining to the user how the app uses this data.**</font>
@@ -40,9 +38,7 @@ date: 2016-09-20 14:39:33
 	<string>此应用会访问您的麦克风</string>
 ```
 
-## Xcode
-
-### 无权限访问此文件
+## 无权限访问此文件
 **问题描述：**
    当修改项目中的 plist 文件后运行项目，会出现以下错误：
 
@@ -57,12 +53,11 @@ date: 2016-09-20 14:39:33
 
 ![](https://o9xwn216o.qnssl.com/blog-img/1473670782316.png)
 
-## AutoLayout
-在使用 AutoLayout布局时，先制定一套约束如下：
+## Xcode编译时候出现各种诡异的问题
+请到这个`/Users/用户名/Library/Developer/Xcode/DerivedData `目录下清理下Xcode缓存,我的问题是，编译时候报文件找不到，但是可以跑起来，`cmd + shift + c `了好几次都不行，然后到缓存目录，全部清理掉，就可以了。。。
 
 
-
-### 横屏状态栏不显示
+## 横屏状态栏不显示
 横屏后状态栏不显示了,这是因为iOS系统(好像是iOS8之后)在视图横屏的时候默认把状态栏隐藏掉了，解决方案：
 
 1. 在plist文件中将 View controller-based status bar appearance 设置为NO
@@ -75,7 +70,7 @@ date: 2016-09-20 14:39:33
 [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 ```
 
-## 横屏竖屏判断
+## 手机平放横屏竖屏判断
 iOS 可以检测屏幕方向，如下枚举
 
 ```objectivec
