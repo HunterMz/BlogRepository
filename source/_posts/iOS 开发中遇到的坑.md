@@ -97,7 +97,7 @@ UIInterfaceOrientationUnknown            = UIDeviceOrientationUnknown,
  
 UIInterfaceOrientationPortrait           = UIDeviceOrientationPortrait,
 
-UIInterfaceOrientationPortraitUpsideDown = UIDeviceOrientationPortraitUpsideDown,
+UIInterfaceOrientationPortraitUpsideDown = **UIDeviceOrientationPortraitUpsideDown,
     
 UIInterfaceOrientationLandscapeLeft      = UIDeviceOrientationLandscapeRight,
 
