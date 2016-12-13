@@ -1,7 +1,7 @@
 ---
-title: 静态库 & 项目依赖
+title: 获取Facebook账号信息
 tags:
-  - 教程
+  - 笔记
 category:
   - iOS开发
 date: 2016-12-13 18:00:33
@@ -9,7 +9,7 @@ date: 2016-12-13 18:00:33
 
 ## 背景
 最近公司有一个`绑定Facebook账号`的需求。最先想到的肯定是集成`FacebookSDK`，这个实现起来很简单，因为Facebook的文档写的实在太详细了。但是我做的是个SDK，导入太多第三方库不太好，而且需要在项目里配置一堆东西。把需求细化，其实只需要获取用户的`Facebook ID`。在老大的提示才想到苹果早就把Facebook集成到系统中了，只要在【设置】->【Facebook】中登录了账号，就可以在用户授权的情况下获取用户的Facebook ID了。
-
+**
 ## 操作
 1.  [Facebook 开发者中心](https://developers.facebook.com)注册应用，注册成功后你会获得一个 `AppIdKey`。
 
