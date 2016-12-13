@@ -34,9 +34,9 @@ date: 2016-12-13 18:00:33
        	if (granted) {
             ACAccount *account = accountStore.accounts.lastObject;
             completion(account, nil);
-        	}else {
+        }else {
             completion(nil,error);
-        	}
+        }
     }];
 }
 	```
@@ -49,7 +49,7 @@ date: 2016-12-13 18:00:33
 	想当然的以为这个就是FacebookID，但是隐约记得以前用FacebookSDK做测试时得到的ID不是长这样子的，然后去验证了下，果然不是......接着就查文档啊，苹果和Facebook开发文档都查过了，任然一无所获。万般无奈，去stack overflow 上请教大神，很快查到了，再一次证明了stackoverflow对程序员的重要性。原来还要用前面得到的`oauthToken`去Facebook做验证，验证的接口是`https://graph.facebook.com/me`
 
 	```ObjectiveC
-	[AGBindFacebookAccount getFacebookTokenWithAppIdKey:@"123456" completion:^(ACAccount *account, NSError *error) {
+[AGBindFacebookAccount getFacebookTokenWithAppIdKey:@"123456" completion:^(ACAccount *account, NSError *error) {
         
         NSURL *requestURL = [NSURL URLWithString:@"https://graph.facebook.com/me/friends"];
         SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeFacebook requestMethod:SLRequestMethodGET URL:requestURL parameters:nil];
@@ -59,11 +59,12 @@ date: 2016-12-13 18:00:33
             if(error) {
                 NSLog(@"error from get%@",error);
             } else {
-				// 你要的 FacebookID 在 data 里
+                // 你要的 FacebookID 在 data 里
                 NSLog(@"%@", data);
             }
         }];
     }];
+
 	```
 
 
