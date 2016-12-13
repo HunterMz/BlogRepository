@@ -17,10 +17,10 @@ date: 2016-12-13 18:00:33
 
 3. 在需要使用的位置导入头文件
 
-	```ObjectiveC
-	#import <Accounts/Accounts.h>
-	#import <Social/Social.h>
-	```
+```ObjectiveC
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
+```
 
 4. 拿到Facebook的 `oauthToken`
 
