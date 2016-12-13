@@ -27,18 +27,18 @@ date: 2016-12-13 18:00:33
 	```ObjectiveC
 	+ (void)getFacebookTokenWithAppIdKey:(NSString *)appIdKey completion:(GetFaceBookBlock)completion {
     
-    	ACAccountStore *accountStore = [[ACAccountStore alloc]init];
-    	ACAccountType *FBaccountType= [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
-    	NSDictionary *params = @{ACFacebookAppIdKey:appIdKey, ACAccountTypeIdentifierFacebook:@[]};
-    	[accountStore requestAccessToAccountsWithType:FBaccountType options:params completion:^(BOOL granted, NSError *error) {
-        	if (granted) {
-            	ACAccount *account = accountStore.accounts.lastObject;
-            	completion(account, nil);
+    ACAccountStore *accountStore = [[ACAccountStore alloc]init];
+    ACAccountType *FBaccountType= [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
+    NSDictionary *params = @{ACFacebookAppIdKey:appIdKey, ACAccountTypeIdentifierFacebook:@[]};
+    [accountStore requestAccessToAccountsWithType:FBaccountType options:params completion:^(BOOL granted, NSError *error) {
+       	if (granted) {
+            ACAccount *account = accountStore.accounts.lastObject;
+            completion(account, nil);
         	}else {
-            	completion(nil,error);
+            completion(nil,error);
         	}
-    	}];
-	}
+    }];
+}
 	```
 	
 5. 获取Facebook 的 `userID`
