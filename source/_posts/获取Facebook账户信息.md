@@ -17,14 +17,14 @@ date: 2016-12-13 18:00:33
 
 3. 在需要使用的位置导入头文件
 
-```ObjectiveC
+	```ObjectiveC
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
-```
+	```
 
 4. 拿到Facebook的 `oauthToken`
 
-```ObjectiveC
+	```ObjectiveC
 + (void)getFacebookTokenWithAppIdKey:(NSString *)appIdKey completion:(GetFaceBookBlock)completion {
     
     ACAccountStore *accountStore = [[ACAccountStore alloc]init];
@@ -39,7 +39,7 @@ date: 2016-12-13 18:00:33
         }
     }];
 }	
-```
+	```
 	
 5. 获取Facebook 的 `userID`
 	这一步猜到一个巨坑，因为在上一步会得到一个 `account`，然后你会发现这个对象不仅包含了你的`username` 还包含了一个 `identifier`
@@ -48,7 +48,7 @@ date: 2016-12-13 18:00:33
 
 	想当然的以为这个就是FacebookID，但是隐约记得以前用FacebookSDK做测试时得到的ID不是长这样子的，然后去验证了下，果然不是......接着就查文档啊，苹果和Facebook开发文档都查过了，任然一无所获。万般无奈，去stack overflow 上请教大神，很快查到了，再一次证明了stackoverflow对程序员的重要性。原来还要用前面得到的`oauthToken`去Facebook做验证，验证的接口是`https://graph.facebook.com/me`
 
-```ObjectiveC
+	```ObjectiveC
 [AGBindFacebookAccount getFacebookTokenWithAppIdKey:@"123456" completion:^(ACAccount *account, NSError *error) {
         
         NSURL *requestURL = [NSURL URLWithString:@"https://graph.facebook.com/me/friends"];
@@ -64,6 +64,6 @@ date: 2016-12-13 18:00:33
             }
         }];
     }];
-```
+	```
 
 
