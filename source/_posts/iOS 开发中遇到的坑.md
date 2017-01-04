@@ -115,3 +115,13 @@ if (self.navigationController.viewControllers.count > 1) {
 }
 ```
 
+## 审核
+
+>
+Missing Push Notification Entitlement - Your app includes an API for Apple's Push Notification service, but the aps-environment entitlement is missing from the app's signature. To resolve this, make sure your App ID is enabled for push notification in the Provisioning Portal. Then, sign your app with a distribution provisioning profile that `includes the aps-environment entitlement`. This will create the correct signature, and you can resubmit your app. See "Provisioning and Development" in the Local and Push Notification Programming Guide for more information. If your app does not use the Apple Push Notification service, no action is required. You may remove the API from future submissions to stop this warning. If you use a third-party framework, you may need to contact the developer for information on removing the API.
+
+Xcode 7以后的坑，解决办法：
+
+![](http://o9xc0bh9t.bkt.clouddn.com/14834937846063.jpg)
+
+
