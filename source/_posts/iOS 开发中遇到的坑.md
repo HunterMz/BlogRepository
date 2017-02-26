@@ -117,11 +117,24 @@ if (self.navigationController.viewControllers.count > 1) {
 
 ## 审核
 
->
-Missing Push Notification Entitlement - Your app includes an API for Apple's Push Notification service, but the aps-environment entitlement is missing from the app's signature. To resolve this, make sure your App ID is enabled for push notification in the Provisioning Portal. Then, sign your app with a distribution provisioning profile that `includes the aps-environment entitlement`. This will create the correct signature, and you can resubmit your app. See "Provisioning and Development" in the Local and Push Notification Programming Guide for more information. If your app does not use the Apple Push Notification service, no action is required. You may remove the API from future submissions to stop this warning. If you use a third-party framework, you may need to contact the developer for information on removing the API.
+> Missing Push Notification Entitlement - Your app includes an API for Apple's Push Notification service, but the aps-environment entitlement is missing from the app's signature. To resolve this, make sure your App ID is enabled for push notification in the Provisioning Portal. Then, sign your app with a distribution provisioning profile that `includes the aps-environment entitlement`. This will create the correct signature, and you can resubmit your app. See "Provisioning and Development" in the Local and Push Notification Programming Guide for more information. If your app does not use the Apple Push Notification service, no action is required. You may remove the API from future submissions to stop this warning. If you use a third-party framework, you may need to contact the developer for information on removing the API.
 
 Xcode 7以后的坑，解决办法：
 
 ![](http://o9xc0bh9t.bkt.clouddn.com/14834937846063.jpg)
 
+
+## IDFA
+iOS开发中，我们经常需要获取设备的唯一表示符。以前可以通过获取UDID来作为设备的唯一标识。但是2012年5月1日后，苹果开始禁止应用获取设备的UDID。那只能通过获取IDFA来识别设备了。
+
+**问题描述：**
+	使用以下代码获取设备的IDFA
+	
+```
+[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+```
+在运行阶段没有任何问题，但是当把应用传到TestFlight进行测试的时候发现，每次杀掉进程重新启动应用获取到的IDFA都是不一样的。当应用通过审核，上传到App Store时，又恢复正常。
+
+
+	
 
