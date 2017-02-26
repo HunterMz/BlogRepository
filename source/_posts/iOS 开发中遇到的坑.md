@@ -116,13 +116,15 @@ if (self.navigationController.viewControllers.count > 1) {
 ```
 
 ## 审核
-
+### Missing Push Notification Entitlement
 > Missing Push Notification Entitlement - Your app includes an API for Apple's Push Notification service, but the aps-environment entitlement is missing from the app's signature. To resolve this, make sure your App ID is enabled for push notification in the Provisioning Portal. Then, sign your app with a distribution provisioning profile that `includes the aps-environment entitlement`. This will create the correct signature, and you can resubmit your app. See "Provisioning and Development" in the Local and Push Notification Programming Guide for more information. If your app does not use the Apple Push Notification service, no action is required. You may remove the API from future submissions to stop this warning. If you use a third-party framework, you may need to contact the developer for information on removing the API.
 
 Xcode 7以后的坑，解决办法：
 
 ![](http://o9xc0bh9t.bkt.clouddn.com/14834937846063.jpg)
 
+### 内购商品超过99.99美元被拒绝
+iTunesConnect上允许你建立超过99.99美元的消耗型商品，但是审核的时候默认是不允许超过99.99美元的消耗型商品。
 
 ## IDFA
 iOS开发中，我们经常需要获取设备的唯一表示符。以前可以通过获取UDID来作为设备的唯一标识。但是2012年5月1日后，苹果开始禁止应用获取设备的UDID。那只能通过获取IDFA来识别设备了。
