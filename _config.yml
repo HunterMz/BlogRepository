@@ -10,8 +10,7 @@ author: HunterMz
 language: zh-Hans
 timezone:
 avatar: https://o9xwn216o.qnssl.com/blog-img/1467887360301.png
-duoshuo_shortname: huntermz
-duoshuo_share: true
+disqus_shortname: huntermz
 fivicon: /favicon-96x96
 baidu_analytics: 39030ecad9a0f8c7f0bfbe1bcf7a630c
 search:
