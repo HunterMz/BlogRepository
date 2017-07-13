@@ -104,6 +104,32 @@ UIInterfaceOrientationLandscapeLeft      = UIDeviceOrientationLandscapeRight,
 UIInterfaceOrientationLandscapeRight     = UIDeviceOrientationLandscapeLeft
 ```
 
+## 监听屏幕旋转
+开放发总会遇到需要根据设备旋转来做屏幕适配。我相信绝大部分开发者都去监听了 `UIDeviceOrientationDidChangeNotification` 这个通知，我也是。但是有一些问题经常出现。当设备旋转时得到你的方向太多了，看代码：
+
+```objectivec
+typedef NS_ENUM(NSInteger, UIDeviceOrientation) {
+    UIDeviceOrientationUnknown,
+    UIDeviceOrientationPortrait,            // Device oriented vertically, home button on the bottom
+    UIDeviceOrientationPortraitUpsideDown,  // Device oriented vertically, home button on the top
+    UIDeviceOrientationLandscapeLeft,       // Device oriented horizontally, home button on the right
+    UIDeviceOrientationLandscapeRight,      // Device oriented horizontally, home button on the left
+    UIDeviceOrientationFaceUp,              // Device oriented flat, face up
+    UIDeviceOrientationFaceDown             // Device oriented flat, face down
+} __TVOS_PROHIBITED;
+```
+就是 `UIDeviceOrientationUnknown` 和 `UIDeviceOrientationFaceUp` 经常捣乱，导致判断不准。
+
+后来发现还有一个通知 `UIApplicationDidChangeStatusBarFrameNotification`，系统只会在四种情况下发这个通知：
+
+```objectivec
+UIDeviceOrientationPortrait  
+UIDeviceOrientationPortraitUpsideDown  
+UIDeviceOrientationLandscapeLeft  
+UIDeviceOrientationLandscapeRight
+```
+完美解觉问题
+
 ## 判断当前控制器是 push 进来的还是 present 进来
 ```objectivec
 if (self.navigationController.viewControllers.count > 1) {
