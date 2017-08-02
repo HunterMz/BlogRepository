@@ -166,3 +166,16 @@ iOS开发中，我们经常需要获取设备的唯一表示符。以前可以�
 
 	
 
+```objectivec
+- (NSArray *)deleteEvenNumberWithArray:(NSArray *)array {
+    NSMutableArray *tempMutableArray = [NSMutableArray arrayWithArray:array];
+    for (int i = 0; i < tempMutableArray.count; i++) {
+        NSInteger tempInteger = [tempMutableArray[i] integerValue];
+        if (tempInteger % 2 == 0) {
+            [tempMutableArray removeObjectAtIndex:i];
+        }
+    }
+    return tempMutableArray.copy;
+}
+```
+
