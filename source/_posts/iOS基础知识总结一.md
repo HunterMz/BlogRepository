@@ -1,3 +1,11 @@
+---
+title: iOS基础知识总结一
+tags:
+  - 笔记
+category:
+  - iOS开发
+date: 2017-08-16 20:00:33
+---
 # 堆栈
 * 管理方式: 栈由编译器自动管理；堆由程序员手动管理。
 
@@ -105,3 +113,5 @@ E--> |NO| G[调用`valueForUndefinedkey` 和 `setValue: forUndefinedKey`]
 * `__block` 在 arc 和 mrc 环境下都能用，可以修饰对象，也能修饰基本数据类型。
 * `__weak` 只能用在 arc 环境下，只能修饰对象，不能修饰基本数据类型。
 * `__block` 对象可以在Block 中重新赋值，`__weak` 不行。
+
+
