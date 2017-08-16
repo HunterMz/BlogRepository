@@ -74,15 +74,8 @@ date: 2017-08-16 20:00:33
 # NotificationCenter、KVC、KVO、Delegate
 * KVO：一对多，键值观察。
 * KVC：键值编码，一个对象在调用setValue的时候:
-```
-graph TB
-A[查找key对应的set方法]-->|YES| B[调用set方法]
-A-->|NO| C[查找_key的成员变量是否存在]
-C-->|YES| D[赋值]
-C-->|NO| E[查找相同名称的key]
-E--> |YES| F[赋值]
-E--> |NO| G[调用`valueForUndefinedkey` 和 `setValue: forUndefinedKey`]
-```
+![](http://o9xc0bh9t.bkt.clouddn.com/15028861726463.jpg)
+
 * Delegate：发送者和接受者是直接的一对一的关系。允许一个类在某些特定时刻通知到其他类，而不需要获取那些类的指针，接受者可以改变发送者的行为。
 * Notification:观察者模式，通常发送者和接受者的关系是间接的多对多关系。消息的发送者告知接受者事件已经发生或者将要发送。接受者不能反过来影响发送者的行为。
 
@@ -109,7 +102,7 @@ E--> |NO| G[调用`valueForUndefinedkey` 和 `setValue: forUndefinedKey`]
 * NULL：对于C语言指针使用的，表示空指针。
 * NSNull：类类型，用于标识空的占位对象，可以用来给服务端接口传空值。
 
-# __block / weak 修饰的区别
+# __block / __weak 修饰的区别
 * `__block` 在 arc 和 mrc 环境下都能用，可以修饰对象，也能修饰基本数据类型。
 * `__weak` 只能用在 arc 环境下，只能修饰对象，不能修饰基本数据类型。
 * `__block` 对象可以在Block 中重新赋值，`__weak` 不行。
