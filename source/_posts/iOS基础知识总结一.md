@@ -61,7 +61,7 @@ date: 2017-08-16 20:00:33
 * 将数据类型的确定、调用类别对象指定的方法由编译时，推迟到运行时。
 * 多态：不同对象以自己的方式响应相同的消息。
 
-# readwrite、readonly、 assign、 retain、 cop、nonatomic
+# readwrite、readonly、 assign、 retain、 copy、nonatomic
 * readwrite：可读可写.要生成getter 和 setter 方法；
 * readonly：只读。成getter方法。属性不可在类外修改。
 * assign：赋值。用于基本数据类型的属性修饰。是一个property的默认属性。
