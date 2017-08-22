@@ -178,4 +178,7 @@ iOS开发中，我们经常需要获取设备的唯一表示符。以前可以�
     return tempMutableArray.copy;
 }
 ```
+## button 相应事件
+在UIImageView 上添加一个 Button ， Button 不能相应事件。设置 `button.userInteractionEnabled = YES` 没用，必须设置`UIImageView.userInteractionEnabled = YES`，才可以。
+
 
