@@ -14,7 +14,7 @@ before_install:
 - cp .travis/ssh_config ~/.ssh/config
 - git config --global user.name "HunterMz"
 - git config --global user.email "Hunter_Mz@icloud.com"
-- git clone git@github.com:HunterMz/hexo-theme-even.git themes/even
+- git clone git@github.com:HunterMz/hexo-theme-even.git themes/hexo-theme-even
 - npm install -g hexo-cli
 install:
 - npm install
