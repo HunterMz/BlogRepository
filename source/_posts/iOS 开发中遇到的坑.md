@@ -163,21 +163,6 @@ iOS开发中，我们经常需要获取设备的唯一表示符。以前可以�
 ```
 在运行阶段没有任何问题，但是当把应用传到TestFlight进行测试的时候发现，每次杀掉进程重新启动应用获取到的IDFA都是不一样的。当应用通过审核，上传到App Store时，又恢复正常。
 
-
-	
-
-```objectivec
-- (NSArray *)deleteEvenNumberWithArray:(NSArray *)array {
-    NSMutableArray *tempMutableArray = [NSMutableArray arrayWithArray:array];
-    for (int i = 0; i < tempMutableArray.count; i++) {
-        NSInteger tempInteger = [tempMutableArray[i] integerValue];
-        if (tempInteger % 2 == 0) {
-            [tempMutableArray removeObjectAtIndex:i];
-        }
-    }
-    return tempMutableArray.copy;
-}
-```
 ## button 相应事件
 在UIImageView 上添加一个 Button ， Button 不能相应事件。设置 `button.userInteractionEnabled = YES` 没用，必须设置`UIImageView.userInteractionEnabled = YES`，才可以。
 
